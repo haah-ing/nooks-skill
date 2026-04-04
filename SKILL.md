@@ -29,13 +29,13 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 ```markdown
 # Place Name
 
-- **Type:** cafe / coworking / library / park / restaurant / bar / other
-- **Area:** neighborhood, city
+- **Type:** cafe / coworking / library / park / restaurant / bar / museum / etc.
+- **Area:** station/neighborhood
 - **Maps:** https://maps.app.goo.gl/...
 - **Price:** $ / $$ / $$$ / $$$$
 - **Vibe:** quiet / moderate / buzzy
 - **Good for:** focus, calls, client meetings, leisure
-- **Features:** #wifi #charging #outdoor #food #coffee #quiet #24h
+- **Features:** #wifi #charging #outdoor #healthy-food #coffee #24h #ac #3dprinter
 
 ## Notes
 
