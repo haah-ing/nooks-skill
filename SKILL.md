@@ -13,6 +13,7 @@ Create on first use: `mkdir -p nooks/<city>/`.
 
 ```
 nooks/
+├── nooksconfig.yml   ← config file, make one if it is not there yet
 ├── hk/
 │   ├── blue-bottle-central.md
 │   └── amber-lan-kwai-fong.md
@@ -29,13 +30,13 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 ```markdown
 # Place Name
 
-- **Type:** cafe / coworking / library / park / restaurant / bar / other
-- **Area:** neighborhood, city
+- **Type:** cafe / coworking / library / park / restaurant / bar / museum / etc.
+- **Area:** station/neighborhood
 - **Maps:** https://maps.app.goo.gl/...
 - **Price:** $ / $$ / $$$ / $$$$
 - **Vibe:** quiet / moderate / buzzy
 - **Good for:** focus, calls, client meetings, leisure
-- **Features:** #wifi #charging #outdoor #food #coffee #quiet #24h
+- **Features:** #wifi #charging #outdoor #healthy-food #coffee #24h #ac #3dprinter
 
 ## Notes
 
@@ -44,7 +45,7 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 
 **Field guidance:**
 
-- **Maps** — use the share link from Google Maps mobile (`maps.app.goo.gl/...`). Exact, compact, opens to the pin.
+- **Maps** — if a Google Places API key is configured, fetch automatically (see [Google Places API](#google-places-api)). Otherwise paste the share link from Google Maps mobile (`maps.app.goo.gl/...`) or leave blank.
 - **Good for** — your standing assessment of what this place suits. Comma-separated. Update if your opinion changes.
 - **Notes** — dated personal log. Observations, tips, surprises, things that shift over time. Format: `4 Apr 2026: ...`
 - **Features** — use standard tags so grep works: `#wifi` `#charging` `#outdoor` `#food` `#coffee` `#quiet` `#24h` `#reservations` `#alcohol` `#coworking`
@@ -55,9 +56,17 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 
 ## Saving a Place
 
-1. **Search the web** (name + city/area) — pre-fill Type, Maps link, Price, Vibe, and Features from what's publicly known.
-2. **Show what you found**: "Found Sightglass — specialty coffee roaster in SoMa SF, $$. Wifi confirmed, communal tables, no time limit."
-3. **Ask as a group** (skip anything already answered):
+1. **Search the web** (name + city/area) — pre-fill Type, Price, Vibe, and Features from what's publicly known.
+2. **Fetch the Maps link** — if `google_places_api_key` is set in `nooks/nooksconfig.yml`, call the Places API Text Search (IDs only, free) and construct the link:
+   ```
+   POST https://places.googleapis.com/v1/places:searchText
+   Headers: X-Goog-Api-Key: <key>, X-Goog-FieldMask: places.id
+   Body: { "textQuery": "<place name>, <city>" }
+   → https://www.google.com/maps/place/?q=place_id:<id>
+   ```
+   Otherwise ask the user for a Maps share link or leave blank.
+3. **Show what you found**: "Found Sightglass — specialty coffee roaster in SoMa SF, $$. Wifi confirmed, communal tables, no time limit."
+4. **Ask as a group** (skip anything already answered):
    - What's it good for? — focus, calls, meetings, catch-up, date, leisure?
    - Vibe? — quiet / moderate / buzzy (if unclear from search)
    - Features to correct? — confirm or fix what you found
@@ -122,6 +131,27 @@ Check a random nook file. Surface something worth knowing:
 - "Amber only has one note — anything new from your last visit?"
 
 If nothing worth mentioning, skip.
+
+---
+
+## Google Places API
+
+The Maps link field can be populated automatically using the Google Places API. It's **free** for this use case (ID-only lookups have no monthly cap).
+
+### Setup
+
+1. Go to [console.cloud.google.com](https://console.cloud.google.com) → **New Project** (e.g. `nooks`)
+2. **APIs & Services** → **Enable APIs and Services** → search **Places API (New)** → Enable
+3. **APIs & Services** → **Credentials** → **Create Credentials** → **API Key**
+4. Restrict the key: click it → **API restrictions** → select **Places API (New)** only
+5. Add a billing account (card required by Google, but ID-only searches are free)
+6. Save the key to `nooks/nooksconfig.yml` (at the root of your nooks folder):
+
+```yaml
+google_places_api_key: YOUR_KEY_HERE
+```
+
+Once configured, Maps links are fetched automatically when saving a place — no manual copy-paste needed.
 
 ---
 
