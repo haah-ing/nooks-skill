@@ -35,6 +35,12 @@ npx skills add Know-Your-People/nooks-skill
 
 Works with OpenClaw, Cursor, Claude Code, and any agent that supports the skills ecosystem.
 
+### Hermes
+
+```bash
+hermes skills install nooks
+```
+
 ---
 
 ## Then just ask
@@ -104,8 +110,8 @@ Two distinct layers of personal knowledge:
 
 Nooks is part of a trio of personal intelligence skills:
 
-- [**Peeps** 👥](https://github.com/Know-Your-People/peeps-skill) — your personal network. When you save a nook from a coffee meeting, Peeps remembers who you met there.
-- [**Haah** 🪩](https://github.com/Know-Your-People/haah-skill) — dispatch to your trusted circles. When your local nooks don't cover a city, Haah can ask your network for recommendations.
+- **[Peeps** 👥](https://github.com/Know-Your-People/peeps-skill) — your personal network. When you save a nook from a coffee meeting, Peeps remembers who you met there.
+- **[Haah** 🪩](https://github.com/Know-Your-People/haah-skill) — dispatch to your trusted circles. When your local nooks don't cover a city, Haah can ask your network for recommendations.
 
 Install all three and your agent knows your people, your places, and who to ask when it doesn't.
 
