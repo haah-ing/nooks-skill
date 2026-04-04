@@ -1,0 +1,101 @@
+# Nooks 📍
+
+> *Save places worth returning to. Find them when it matters.*
+
+**Nooks** is an open-source skill for your agent that helps you build a personal library of places — cafes, coworking spots, libraries, restaurants, anywhere worth going back to. One markdown file per place, organized by city, fully searchable.
+
+No app. No account. Just your agent and a folder of files.
+
+---
+
+## What it does
+
+- **Saves places** — searches the web first to pre-fill what's publicly known (type, wifi, price), then asks you what it's good for and captures your personal take
+- **Finds places** — "where can I focus in HK?" greps your nooks by vibe, features, and purpose
+- **Logs over time** — dated notes capture how your experience of a place evolves
+- **Travels with you** — files organized by city so moving between places stays clean
+
+```
+nooks/
+  hk/
+    blue-bottle-central.md
+  sf/
+    sightglass-soma.md
+  sg/
+    common-ground-tanjong-pagar.md
+```
+
+---
+
+## Install
+
+```bash
+npx skills add nooks-skill
+```
+
+Works with OpenClaw, Cursor, Claude Code, and any agent that supports the skills ecosystem.
+
+---
+
+## Then just ask
+
+```
+"Save this place — Sightglass Coffee in SoMa SF"
+"Where can I focus in HK?"
+"Find somewhere quiet with wifi and charging in Singapore"
+"Add a note to Amber — packed on Friday evenings"
+```
+
+Each place file looks like this:
+
+```markdown
+# Sightglass Coffee
+
+- **Type:** cafe
+- **Area:** SoMa, SF
+- **Maps:** https://maps.app.goo.gl/abc123
+- **Price:** $$
+- **Vibe:** moderate
+- **Good for:** focus, casual catch-up, leisure
+- **Features:** #wifi #charging #coffee #food
+
+## Notes
+
+4 Apr 2026: upper floor is quieter, communal tables fill fast after 10am
+```
+
+---
+
+## Good for vs Notes
+
+Two distinct layers of personal knowledge:
+
+- **Good for** — your standing assessment of what this place suits. Updated if your opinion changes.
+- **Notes** — a dated log of observations over time. What you noticed, tips, surprises.
+
+---
+
+## Works best with
+
+Nooks is part of a trio of personal intelligence skills:
+
+- [**Peeps** 👥](https://github.com/Know-Your-People/peeps-skill) — your personal network. When you save a nook from a coffee meeting, Peeps remembers who you met there.
+- [**Haah** 🪩](https://github.com/Know-Your-People/haah-skill) — dispatch to your trusted circles. When your local nooks don't cover a city, Haah can ask your network for recommendations.
+
+Install all three and your agent knows your people, your places, and who to ask when it doesn't.
+
+---
+
+## Contributing
+
+The skill lives in `SKILL.md` — that's the brain. Edit it, improve it, make it yours. PRs welcome.
+
+---
+
+## License
+
+MIT. Take it, fork it, build on it.
+
+---
+
+**Designed by Ilya Belkin @ Know Your Company**
