@@ -35,7 +35,7 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 ```markdown
 # Place Name
 
-- **Type:** cafe / coworking / library / park / restaurant / bar / museum / etc.
+- **Type:** cafe / coworking / library / park / restaurant / bar / museum / church / etc.
 - **Area:** station/neighborhood
 - **Maps:** https://maps.app.goo.gl/...
 - **Price:** $ / $$ / $$$ / $$$$
