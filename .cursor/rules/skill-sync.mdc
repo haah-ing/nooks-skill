@@ -1,0 +1,11 @@
+---
+description: Keep SKILL.md and skills/nooks/SKILL.md in sync
+globs: SKILL.md, skills/nooks/SKILL.md
+alwaysApply: false
+---
+
+# SKILL.md must be kept in sync
+
+`SKILL.md` (repo root) and `skills/nooks/SKILL.md` must always be **exact copies** for cross-platform compatibility — some agent runtimes load from the root, others from `skills/<name>/`.
+
+Whenever you edit one, immediately copy the change to the other. Never leave them out of sync.
