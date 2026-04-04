@@ -4,9 +4,9 @@ description: Personal place intelligence — save and find cafes, coworking spac
 metadata: { "openclaw": { "emoji": "📍", "os": ["linux", "darwin", "win32"] } }
 ---
 
-## 📍 Nooks — local place intelligence
+# 📍 Nooks — local place intelligence
 
-### Data
+## Data
 
 Files live in `nooks/<city>/`. City folders use short lowercase slugs: `hk`, `sf`, `sg`, `london`, `bkk`.
 Create on first use: `mkdir -p nooks/<city>/`.
@@ -24,7 +24,7 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 
 ---
 
-### Place File
+## Place File
 
 ```markdown
 # Place Name
@@ -53,7 +53,7 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 
 ---
 
-### Saving a Place
+## Saving a Place
 
 1. **Search the web** (name + city/area) — pre-fill Type, Maps link, Price, Vibe, and Features from what's publicly known.
 2. **Show what you found**: "Found Sightglass — specialty coffee roaster in SoMa SF, $$. Wifi confirmed, communal tables, no time limit."
@@ -65,7 +65,7 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 
 ---
 
-### Finding Places
+## Finding Places
 
 Use `grep` with expanded terms. Search city folder or all of `nooks/` cross-city.
 
@@ -96,7 +96,7 @@ If local results are thin and Haah skill is installed, suggest dispatching to a 
 
 ---
 
-### Core Behavior
+## Core Behavior
 
 - User mentions a place → check if a file exists, offer to create or update
 - User asks "where can I work/eat in [city]?" → search `nooks/<city>/` first
@@ -113,7 +113,7 @@ Save places as they come up naturally. Enrich over time. Don't wait for a data e
 
 ---
 
-### Every Morning
+## Every Morning
 
 Check a random nook file. Surface something worth knowing:
 
@@ -125,7 +125,7 @@ If nothing worth mentioning, skip.
 
 ---
 
-### What NOT to Suggest
+## What NOT to Suggest
 
 - Syncing with Google Maps saved places — different purpose, keep separate
 - Crowd-sourced ratings or reviews — Nooks is personal signal, not Yelp
