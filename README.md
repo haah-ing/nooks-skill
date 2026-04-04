@@ -30,7 +30,7 @@ nooks/
 ## Install
 
 ```bash
-npx skills add nooks-skill
+npx skills add Know-Your-People/nooks-skill
 ```
 
 Works with OpenClaw, Cursor, Claude Code, and any agent that supports the skills ecosystem.
