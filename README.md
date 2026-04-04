@@ -66,6 +66,31 @@ Each place file looks like this:
 
 ---
 
+## Auto Maps links (optional, free)
+
+Nooks can automatically fetch a stable Google Maps link when saving a place — no copy-pasting from your phone needed.
+
+It uses the **Google Places API (Text Search, IDs only)**, which has no monthly cap and costs nothing.
+
+**Setup:**
+
+1. Go to [console.cloud.google.com](https://console.cloud.google.com) → New Project
+2. Enable **Places API (New)**
+3. Create an API key and restrict it to Places API (New)
+4. Add a billing account (required by Google, but ID-only searches are free)
+5. Create `nooks/nooksconfig.yml`:
+
+```yaml
+google_places_api_key: YOUR_KEY_HERE
+```
+
+Once set, your agent will call the API automatically and store a `place_id`-based link like:
+`https://www.google.com/maps/place/?q=place_id:ChIJ...`
+
+> `nooksconfig.yml` is excluded from git by default — your key stays local.
+
+---
+
 ## Good for vs Notes
 
 Two distinct layers of personal knowledge:
