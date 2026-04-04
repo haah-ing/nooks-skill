@@ -1,7 +1,12 @@
 ---
 name: nooks
 description: Personal place intelligence — save and find cafes, coworking spaces, libraries, restaurants, and other spots worth revisiting. Stores one markdown file per place in nooks/<city>/. Use when saving a new place, looking up a spot, or asking "where should I work/eat/meet in [city]?".
-metadata: { "openclaw": { "emoji": "📍", "os": ["linux", "darwin", "win32"] } }
+metadata:
+  openclaw:
+    emoji: "📍"
+    os: ["linux", "darwin", "win32"]
+  hermes:
+    tags: ["places", "local", "recommendations"]
 ---
 
 # 📍 Nooks — local place intelligence
