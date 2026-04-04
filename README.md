@@ -98,4 +98,4 @@ MIT. Take it, fork it, build on it.
 
 ---
 
-**Designed by Ilya Belkin @ Know Your Company**
+*Designed by Ilya Belikin @ Know Your People*
