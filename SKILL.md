@@ -160,6 +160,16 @@ Once configured, Maps links are fetched automatically when saving a place — no
 
 ---
 
+## Updating
+
+To update this skill to the latest version, fetch the new SKILL.md from GitHub and replace this file:
+
+```
+https://raw.githubusercontent.com/Know-Your-People/nooks-skill/main/SKILL.md
+```
+
+---
+
 ## What NOT to Suggest
 
 - Syncing with Google Maps saved places — different purpose, keep separate
