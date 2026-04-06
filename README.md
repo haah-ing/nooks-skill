@@ -108,7 +108,7 @@ Nooks is part of a suite of personal intelligence skills:
 - [**Peeps** 👥](https://github.com/Know-Your-People/peeps-skill) — your personal network. When you save a nook from a coffee meeting, Peeps remembers who you met there.
 - [**Pages** 📖](https://github.com/Know-Your-People/pages-skill) — your reading life. A quiet nook with good wifi is where books get read and notes get written.
 - [**Vibes** 🎧](https://github.com/Know-Your-People/vibes-skill) — your cultural context. Some places have a sound; your agent knows both.
-- [**Digs** 🔭](https://github.com/Know-Your-People/dig-skill) — your active research threads. A coffee meeting at a nook can turn into a finding.
+- [**Digs** 🔭](https://github.com/Know-Your-People/digs-skill) — your active research threads. A coffee meeting at a nook can turn into a finding.
 
 Install all six and your agent knows your people, your places, your reads, your culture, and your open questions.
 
