@@ -54,10 +54,10 @@ Features: #wifi #charging #outdoor #healthy-food #coffee #24h #ac #3dprinter
 
 **Field guidance:**
 
-- **Maps** — if a Google Places API key is configured, fetch automatically (see [Google Places API](#google-places-api)). Otherwise paste the share link from Google Maps mobile (`maps.app.goo.gl/...`) or leave blank.
-- **Good for** — your standing assessment of what this place suits. Comma-separated. Update if your opinion changes.
-- **Notes** — dated personal log. Observations, tips, surprises, things that shift over time. Format: `4 Apr 2026: ...`
-- **Features** — use standard tags so grep works: `#wifi` `#charging` `#outdoor` `#food` `#coffee` `#quiet` `#24h` `#reservations` `#alcohol` `#coworking`
+Maps: if a Google Places API key is configured, fetch automatically (see [Google Places API](#google-places-api)). Otherwise paste the share link from Google Maps mobile (`maps.app.goo.gl/...`) or leave blank.
+Good for: your standing assessment of what this place suits. Comma-separated. Update if your opinion changes.
+Notes: dated personal log. Observations, tips, surprises, things that shift over time. Format: `4 Apr 2026: ...`
+Features: use standard tags so grep works: `#wifi` `#charging` `#outdoor` `#food` `#coffee` `#quiet` `#24h` `#reservations` `#alcohol` `#coworking`
 
 **Good for vs Notes — the distinction:** Good for is the verdict; Notes is the evidence. One is a label, the other is a log.
 
