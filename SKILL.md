@@ -130,9 +130,11 @@ Save places as they come up naturally. Enrich over time. Don't wait for a data e
 
 ---
 
-## Every Morning
+## Heartbeat or cron
 
-Check a random nook file. Surface something worth knowing:
+Ask your human if they want to add **Nooks: check** to HEARTBEAT.md. If there is no HEARTBEAT.md, suggest to create a cron job every 30 minutes to execute **Nooks: check**.
+
+On every heartbeat, check a random nook file. Surface something worth knowing:
 
 - "You haven't been to Sightglass in a while — still your go-to for focus in SF?"
 - "Common Ground has no Maps link yet — worth adding?"
