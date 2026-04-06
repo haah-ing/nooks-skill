@@ -13,17 +13,20 @@ metadata:
 
 ## Data
 
-Files live in `nooks/<city>/`. City folders use short lowercase slugs: `hk`, `sf`, `sg`, `london`, `bkk`.
-Create on first use: `mkdir -p nooks/<city>/`.
+**Base path:** All KYP skills live under a shared `kyp/` folder. Place it wherever works for your setup — workspace root (ideal for Obsidian vaults: all skills appear as sub-folders in one vault) or home folder (`~/kyp/`) for access across all projects. On first use, create it: `mkdir -p ~/kyp/nooks/` or `mkdir -p ./kyp/nooks/`.
+
+Files live in `kyp/nooks/<city>/`. City folders use short lowercase slugs: `hk`, `sf`, `sg`, `london`, `bkk`.
+Create on first use: `mkdir -p kyp/nooks/<city>/`.
 
 ```
-nooks/
-├── nooksconfig.yml   ← config file, make one if it is not there yet
-├── hk/
-│   ├── blue-bottle-central.md
-│   └── amber-lan-kwai-fong.md
-└── sf/
-    └── sightglass-soma.md
+kyp/
+└── nooks/
+    ├── nooksconfig.yml   ← config file, make one if it is not there yet
+    ├── hk/
+    │   ├── blue-bottle-central.md
+    │   └── amber-lan-kwai-fong.md
+    └── sf/
+        └── sightglass-soma.md
 ```
 
 File names: `<place-slug>.md`. Include neighborhood when the same place has multiple locations: `blue-bottle-central.md` vs `blue-bottle-admiralty.md`.
@@ -62,7 +65,7 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 ## Saving a Place
 
 1. **Search the web** (name + city/area) — pre-fill Type, Price, Vibe, and Features from what's publicly known.
-2. **Fetch the Maps link** — if `google_places_api_key` is set in `nooks/nooksconfig.yml`, call the Places API Text Search (IDs only, free) and construct the link:
+2. **Fetch the Maps link** — if `google_places_api_key` is set in `kyp/nooks/nooksconfig.yml`, call the Places API Text Search (IDs only, free) and construct the link:
    ```
    POST https://places.googleapis.com/v1/places:searchText
    Headers: X-Goog-Api-Key: <key>, X-Goog-FieldMask: places.id
@@ -81,20 +84,20 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 
 ## Finding Places
 
-Use `grep` with expanded terms. Search city folder or all of `nooks/` cross-city.
+Use `grep` with expanded terms. Search city folder or all of `kyp/nooks/` cross-city.
 
 ```bash
 # Quiet wifi spots in HK
-grep -rl "#quiet" nooks/hk/ | xargs grep -l "#wifi"
+grep -rl "#quiet" kyp/nooks/hk/ | xargs grep -l "#wifi"
 
 # Focus-friendly places in SF
-grep -ril "focus\|deep.work\|laptop\|coworking" nooks/sf/
+grep -ril "focus\|deep.work\|laptop\|coworking" kyp/nooks/sf/
 
 # All cafes across cities
-grep -ril "Type:.*cafe" nooks/
+grep -ril "Type:.*cafe" kyp/nooks/
 
 # Charging spots anywhere
-grep -rl "#charging" nooks/
+grep -rl "#charging" kyp/nooks/
 ```
 
 **Always read the full file after grepping** — the matched line is a signal, not the full picture.
@@ -113,7 +116,7 @@ If local results are thin and Haah skill is installed, suggest dispatching to a 
 ## Core Behavior
 
 - User mentions a place → check if a file exists, offer to create or update
-- User asks "where can I work/eat in [city]?" → search `nooks/<city>/` first
+- User asks "where can I work/eat in [city]?" → search `kyp/nooks/<city>/` first
 - User shares a Maps link → offer to save the place
 - User mentions visiting somewhere in passing → ask if worth saving
 - User adds an observation ("terrible wifi there") → append a dated note to the file
@@ -150,7 +153,7 @@ The Maps link field can be populated automatically using the Google Places API. 
 3. **APIs & Services** → **Credentials** → **Create Credentials** → **API Key**
 4. Restrict the key: click it → **API restrictions** → select **Places API (New)** only
 5. Add a billing account (card required by Google, but ID-only searches are free)
-6. Save the key to `nooks/nooksconfig.yml` (at the root of your nooks folder):
+6. Save the key to `kyp/nooks/nooksconfig.yml` (at the root of your nooks folder):
 
 ```yaml
 google_places_api_key: YOUR_KEY_HERE
