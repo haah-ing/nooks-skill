@@ -42,7 +42,7 @@ File names: `<place-slug>.md`. Include neighborhood when the same place has mult
 - **Area:** station/neighborhood
 - **Maps:** https://maps.app.goo.gl/...
 - **Price:** $ / $$ / $$$ / $$$$
-- **Image:** `kyp/assets/slug-that-make-sense` only if adding an image.
+- **Image:** `../assets/slug-that-make-sense` only if adding an image.
 - **Vibe:** quiet / moderate / buzzy
 - **Good for:** focus, calls, client meetings, leisure
 - **Features:** #wifi #charging #outdoor #healthy-food #coffee #24h #ac #3dprinter
