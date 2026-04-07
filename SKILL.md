@@ -134,7 +134,7 @@ Save places as they come up naturally. Enrich over time. Don't wait for a data e
 
 ## Heartbeat or cron
 
-Ask your human if they want to add **Nooks: check** to HEARTBEAT.md. If there is no HEARTBEAT.md, suggest to create a cron job every 30 minutes to execute **Nooks: check**.
+Ask your human if they want to add **Nooks: check** to HEARTBEAT.md. If there is no HEARTBEAT.md, suggest to create a cron every 30 minutes during waking hours (`*/30 7-22 * * *`) to execute **Nooks: check**.
 
 On every heartbeat, check a random nook file. Surface something worth knowing:
 
