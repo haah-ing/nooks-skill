@@ -29,11 +29,20 @@ nooks/
 
 ## Install
 
+### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills/nooks
+curl -o ~/.claude/skills/nooks/SKILL.md https://raw.githubusercontent.com/Know-Your-People/nooks-skill/main/SKILL.md
+```
+
+### Other agents
+
 ```bash
 npx skills add Know-Your-People/nooks-skill
 ```
 
-Works with OpenClaw, Cursor, Claude Code, and any agent that supports the skills ecosystem.
+Works with OpenClaw, Cursor, and any agent that supports the skills ecosystem.
 
 ---
 
