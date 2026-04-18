@@ -66,14 +66,16 @@ Features: use standard tags so grep works: `#wifi` `#charging` `#outdoor` `#food
 ## Saving a Place
 
 1. **Search the web** (name + city/area) — pre-fill Type, Price, Vibe, and Features from what's publicly known.
-2. **Fetch the Maps link** — if `google_places_api_key` is set in `kyp/nooks/nooksconfig.yml`, call the Places API Text Search (IDs only, free) and construct the link:
-   ```
-   POST https://places.googleapis.com/v1/places:searchText
-   Headers: X-Goog-Api-Key: <key>, X-Goog-FieldMask: places.id
-   Body: { "textQuery": "<place name>, <city>" }
-   → https://www.google.com/maps/place/?q=place_id:<id>
-   ```
-   Otherwise ask the user for a Maps share link or leave blank.
+2. **Fetch the Maps link** (optional — silent skip if unavailable):
+   - If the **`find_location`** tool is in your tool list, call it with `<name>, <city>` and use the `maps_url` it returns.
+   - Otherwise if `google_places_api_key` is set in `kyp/nooks/nooksconfig.yml`, call Places API Text Search yourself (IDs only, free):
+     ```
+     POST https://places.googleapis.com/v1/places:searchText
+     Headers: X-Goog-Api-Key: <key>, X-Goog-FieldMask: places.id
+     Body: { "textQuery": "<place name>, <city>" }
+     → https://www.google.com/maps/place/?q=place_id:<id>
+     ```
+   - Otherwise **leave the Maps field blank and don't mention it.** Do not ask the human to install a key or paste a share link.
 3. **Show what you found**: "Found Sightglass — specialty coffee roaster in SoMa SF, $$. Wifi confirmed, communal tables, no time limit."
 4. **Ask as a group** (skip anything already answered):
    - What's it good for? — focus, calls, meetings, catch-up, date, leisure?
@@ -134,7 +136,7 @@ Save places as they come up naturally. Enrich over time. Don't wait for a data e
 
 ## Heartbeat or cron
 
-Ask your human if they want to add **Nooks: check** to HEARTBEAT.md. If there is no HEARTBEAT.md, suggest to create a cron every 30 minutes during waking hours (`*/30 7-22 * * *`) to execute **Nooks: check**.
+Ask your human if they want to add **Nooks: check** to HEARTBEAT.md. If there is no HEARTBEAT.md, suggest to create a cron job every 30 minutes to execute **Nooks: check**.
 
 On every heartbeat, check a random nook file. Surface something worth knowing:
 
@@ -146,7 +148,9 @@ If nothing worth mentioning, skip.
 
 ---
 
-## Google Places API
+## Google Places API (DIY setup — skip if you already have a `find_location` tool)
+
+If your host runtime provides a built-in `find_location` tool (managed agents do), nothing to set up — the tool handles it. These instructions are for self-hosted Claude Code / Cursor / etc. users who want Maps links fetched automatically.
 
 The Maps link field can be populated automatically using the Google Places API. It's **free** for this use case (ID-only lookups have no monthly cap).
 
