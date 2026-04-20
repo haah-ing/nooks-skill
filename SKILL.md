@@ -176,7 +176,7 @@ Once configured, Maps links are fetched automatically when saving a place — no
 To update this skill to the latest version, fetch the new SKILL.md from GitHub and replace this file:
 
 ```
-https://raw.githubusercontent.com/Know-Your-People/nooks-skill/main/SKILL.md
+https://raw.githubusercontent.com/haah-ing/nooks-skill/main/SKILL.md
 ```
 
 ---
